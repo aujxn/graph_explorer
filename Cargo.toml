@@ -1,0 +1,9 @@
+[package]
+name = "graph_explorer"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+bevy = "0.6.0"
+rand = "0.8.4"
+matrixlab = { git = "https://github.com/aujxn/matrixlab" }
