@@ -1,5 +1,9 @@
 fn main() {
-    let partitions = graph_explorer::load_partfile();
-    let coords = graph_explorer::load_coords();
-    //graph_explorer::run(coords);
+    let (coords, partition) = graph_explorer::load_coords();
+    let matrix = graph_explorer::load_matrix();
+    let ingredient_list = graph_explorer::load_labels();
+
+    let embedding = graph_explorer::Embedding::new(coords, partition, matrix, ingredient_list);
+
+    graph_explorer::run(embedding);
 }

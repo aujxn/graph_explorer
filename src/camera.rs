@@ -1,6 +1,10 @@
 use bevy::input::mouse::{MouseMotion, MouseWheel};
 use bevy::prelude::*;
 use bevy::render::camera::PerspectiveProjection;
+use bevy_mod_picking::{
+    DebugCursorPickingPlugin, DebugEventsPickingPlugin, DefaultPickingPlugins, PickableBundle,
+    PickingCameraBundle,
+};
 /// Tags an entity as capable of panning and orbiting.
 #[derive(Component)]
 pub struct PanOrbitCamera {
@@ -127,5 +131,6 @@ pub fn spawn_camera(mut commands: Commands) {
         .insert(PanOrbitCamera {
             radius,
             ..Default::default()
-        });
+        })
+        .insert_bundle(PickingCameraBundle::default());
 }

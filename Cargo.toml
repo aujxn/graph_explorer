@@ -7,3 +7,4 @@ edition = "2021"
 bevy = "0.6.0"
 rand = "0.8.4"
 matrixlab = { git = "https://github.com/aujxn/matrixlab" }
+bevy_mod_picking = "0.5"
